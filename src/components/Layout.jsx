@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import PinkLogLogo from './PinkLogLogo'
 
 const navItems = [
   { path: '/shop', label: '스토어' },
@@ -21,8 +22,7 @@ export default function Layout() {
         <div className="max-w-[1280px] mx-auto flex items-center justify-between gap-4 md:gap-8">
           <div className="flex items-center gap-4 md:gap-8">
             <Link to="/" className="flex items-center gap-2 no-underline shrink-0">
-              <span className="material-symbols-outlined text-3xl text-primary font-bold">favorite</span>
-              <h2 className="text-slate-900 text-xl font-extrabold tracking-tight">PinkLog</h2>
+              <PinkLogLogo size="md" />
             </Link>
             <nav className="hidden lg:flex items-center gap-6">
               {navItems.map(({ path, label }) => {
@@ -153,9 +153,8 @@ export default function Layout() {
       <footer className="bg-white border-t border-primary/10 py-12 px-6 lg:px-20 mt-auto">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
-            <div className="flex items-center gap-2 text-primary mb-6">
-              <span className="material-symbols-outlined text-3xl font-bold">favorite</span>
-              <h2 className="text-slate-900 text-xl font-extrabold tracking-tight">PinkLog</h2>
+            <div className="mb-6">
+              <PinkLogLogo size="md" />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed">
               유방암 환우분들의 여정을 함께하는 따뜻한 커뮤니티입니다.

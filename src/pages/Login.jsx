@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Navigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import PinkLogLogo from '../components/PinkLogLogo'
 
 export default function Login() {
   const [isSignup, setIsSignup] = useState(false)
@@ -34,7 +35,7 @@ export default function Login() {
       const msg = err.message
       if (msg.includes('Invalid login')) setError('이메일 또는 비밀번호가 올바르지 않습니다.')
       else if (msg.includes('already registered')) setError('이미 가입된 이메일입니다.')
-      else if (msg.includes('Password should be')) setError('비밀번호는 6자 이상이어야 합니다.')
+      else if (msg.includes('Password should be')) setError('비밀번호는 8자 이상이어야 합니다.')
       else setError(msg)
     } finally {
       setSubmitting(false)
@@ -53,8 +54,8 @@ export default function Login() {
     <div className="min-h-[70vh] flex items-center justify-center">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="material-symbols-outlined text-white text-3xl">favorite</span>
+          <div className="flex justify-center mb-4">
+            <PinkLogLogo size="lg" />
           </div>
           <h1 className="text-3xl font-black text-slate-900 mb-2">
             {isSignup ? 'PinkLog 가입하기' : 'PinkLog 로그인'}
@@ -108,10 +109,10 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder={isSignup ? '6자 이상 입력하세요' : '••••••••'}
+              placeholder={isSignup ? '8자 이상 입력하세요' : '••••••••'}
               className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
               required
-              minLength={6}
+              minLength={8}
             />
           </div>
 

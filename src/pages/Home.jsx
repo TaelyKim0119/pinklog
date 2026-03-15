@@ -78,12 +78,17 @@ export default function Home() {
           <div className="flex-1 w-full">
             <div className="relative group">
               <div className="absolute -inset-4 bg-primary/20 rounded-[2.5rem] blur-2xl group-hover:bg-primary/30 transition-all" />
-              <div
-                className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl bg-cover bg-center"
-                style={{
-                  backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMG9BkOFtXEE7HdhGxsizqjGQHcok2v5KmEMjb4qzGeaYFMsLgLornA7p1OzybgU90dpRa5kJfxhS4I7jpRQYxlN2wQ8lnvEITYC_OnOowXL0_O-bE1gC5mfcXtW-WgBRs6CXdgTg3Laj7_jMRPG3BE8IA5565uVZNK8XLmTwpE0X_3AKUQo8jJhjrzasTwwy3E_OFfd9MQZw2pBMGC0NHLbpsHKW9WLcwYRpKHkYuyP0qgqLG-mobSzZUREfJILtPXeQRgwILSQw')`,
-                }}
-              />
+              <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1764751024389-857d08396423?auto=format&fit=crop&w=1200&q=80"
+                  alt="함께 웃고 있는 여성들"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.onerror = null
+                    e.target.src = 'https://images.unsplash.com/photo-1577350918961-6f373cda1d15?auto=format&fit=crop&w=1200&q=80'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
