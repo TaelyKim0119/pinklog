@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Community from './pages/Community'
 import FactCheck from './pages/FactCheck'
 import Care from './pages/Care'
+import Shop from './pages/Shop'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="community" element={<Community />} />
         <Route path="factcheck" element={<FactCheck />} />
         <Route path="care" element={<Care />} />
+        <Route path="shop" element={<Shop />} />
       </Route>
     </Routes>
   )
